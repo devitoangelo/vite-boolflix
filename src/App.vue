@@ -1,15 +1,30 @@
+
 <script>
+import { state } from './state'
+
 export default {
-  
+
+  data() {
+    return{
+      state
+    }
+  }
 }
+
 </script>
 
-<template lang="">
-  <div>
-    
-  </div>
-  
+<template>
+
+<h1>questo è il mio messaggio : {{state.message}}</h1>
+
+
+
+ 
+
 </template>
-<style lang="">
+
+
+
+<style>
   
 </style>
