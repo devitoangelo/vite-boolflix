@@ -11,8 +11,11 @@ export default {
   },
   methods: {
     searchText() {
-      console.log('ciao' , this.state.search);
-  
+      // console.log('ciao' , this.state.search);
+      const url = `${state.urlType}?api_key=${state.api_key}&query=${state.search}`
+
+      console.log(url);
+      this.state.callApi(url)
     }
   }
 }
