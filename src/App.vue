@@ -2,20 +2,18 @@
 import { state } from './state'
 
 export default {
+  name: 'App',
 
   data() {
     return {
       state
     }
   },
-  mounted() {
-    // console.log(state);
-    // this.state.films
-
-    this.state.getFilms(this.state.urlType)
-
-
-
+  methods: {
+    searchText() {
+      console.log('ciao' , this.state.search);
+  
+    }
   }
 }
 
@@ -23,8 +21,11 @@ export default {
 
 <template>
 
-  <h1>questo è il mio messaggio : {{ state.message }}</h1>
+<header>
+<input type="text" v-model="state.search">
+<button @click="searchText()">search</button>
 
+</header>
 
 
 
