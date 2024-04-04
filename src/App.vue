@@ -24,13 +24,16 @@ export default {
 
 <template>
 
-<header>
-<input type="text" v-model="state.search">
-<button @click="searchText()">search</button>
+  <header>
+    <input type="text" placeholder="cera film o serie TV" v-model="state.search">
+    <button @click="searchText()">search</button>
+  </header>
 
-</header>
 
-
+  <ul>
+    <li v-for="film in state.films">{{ film.original_title }}</li>
+    <!-- serve solo per vedere i film a schermo  -->
+  </ul>
 
 
 </template>
