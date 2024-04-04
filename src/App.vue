@@ -30,8 +30,11 @@ export default {
   </header>
 
 
-  <ul>
-    <li v-for="film in state.films">{{ film.original_title }}</li>
+  <ul v-for="film in state.films">
+    <li> Titolo originale : {{ film.original_title }}</li>
+    <li> Lingua ufficiale: {{ film.original_language }}</li>
+    <li> Titolo : {{ film.title }}</li>
+    <li> Voto film : {{ film.vote_average }}</li>
     <!-- serve solo per vedere i film a schermo  -->
   </ul>
 
