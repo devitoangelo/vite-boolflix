@@ -4,9 +4,10 @@ import axios from "axios";
 export const state = reactive({
 
     message: 'messaggio prova state',
-    urlType: 'https://api.themoviedb.org/3/search/movie',
+    urlType: 'https://api.themoviedb.org/3/',
+    FilmMovie: 'search/movie',
+    FilmSeries: 'search/tv',
     api_key: '2df89758a34ce45fc10402fa4da73b3a&',
-
     films: [],
     search: '',
 

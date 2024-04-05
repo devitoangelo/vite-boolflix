@@ -19,17 +19,26 @@ export default {
       //continuare con lo screen
     },
 
-
-
-
-
-    searchText() {
-      // console.log('ciao' , this.state.search);
-      const url = `${state.urlType}?api_key=${state.api_key}&query=${state.search}`
+    searchSeries(){
+      console.log('ciao', state.search);
+      const url = `${state.urlType + state.FilmSeries}?api_key=${state.api_key}&query=${state.search}`
 
       console.log(url);
-      this.state.callApi(url)
+      this.state.callApi(url);
+
     }
+
+
+
+
+
+    // searchText() {
+    //   // console.log('ciao' , this.state.search);
+    //   const url = `${state.urlType}?api_key=${state.api_key}&query=${state.search}`
+
+    //   console.log(url);
+    //   this.state.callApi(url)
+    // }
   }
 }
 
@@ -39,7 +48,7 @@ export default {
 
   <header>
     <input type="text" placeholder="cera film o serie TV" v-model="state.search">
-    <button @click="searchText()">search</button>
+    <button @click="searchSeries()">search</button>
   </header>
 
 
@@ -49,11 +58,9 @@ export default {
     <div v-if="flag(film.original_language)">
       <img width="20" :src="'/images/' + film.original_language + '.png'" alt="">
     </div>
-    <p v-else>
+    <div v-else>
       Lingua ufficiale: {{ film.original_language }}
-    </p>
-
-    <!-- <li> Lingua ufficiale: {{ film.original_language }}</li> -->
+    </div>
     <li> Titolo : {{ film.title }}</li>
     <li> Voto film : {{ film.vote_average }}</li>
     <!-- serve solo per vedere i film a schermo  -->
