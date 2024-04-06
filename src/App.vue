@@ -8,6 +8,7 @@ export default {
     return {
       state,
       language: ['it', 'en', 'fr', 'ja', 'zh', 'ru',],
+      
     }
   },
   methods: {
@@ -87,6 +88,12 @@ export default {
         {{ content.vote_average }}
       </div>
 
+
+        <!-- Img -->
+      <div>
+        <img :src="'https://image.tmdb.org/t/p/w500/' + content.poster_path" alt="">
+
+      </div>
 
 
 
