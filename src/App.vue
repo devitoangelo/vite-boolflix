@@ -8,7 +8,7 @@ export default {
     return {
       state,
       language: ['it', 'en', 'fr', 'ja', 'zh', 'ru',],
-      
+
     }
   },
   methods: {
@@ -83,17 +83,25 @@ export default {
         {{ content.original_language }}
       </div>
 
-         <!-- Voto -->
+      <!-- Voto -->
       <div>
         {{ content.vote_average }}
       </div>
 
 
-        <!-- Img -->
+      <!-- Img -->
       <div>
         <img :src="'https://image.tmdb.org/t/p/w500/' + content.poster_path" alt="">
 
       </div>
+
+
+
+
+      <span v-for="n in Math.ceil(content.vote_average / 2)" :key="n">
+        <i class="fa-solid fa-star"></i>
+      </span>
+
 
 
 
