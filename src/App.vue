@@ -54,19 +54,13 @@ export default {
 
 
   
-  <ul v-for="film in state.films">
-    <li > Titolo originale : {{ film.original_title }}</li>
+  <section v-for="(film,type) in state.films">
+    <h2>{{ type }}</h2>
 
-    <div v-if="flag(film.original_language)">
-      <img width="20" :src="'/images/' + film.original_language + '.png'" alt="">
-    </div>
-    <div v-else>
-      Lingua ufficiale: {{ film.original_language }}
-    </div>
-    <li> Titolo : {{ film.title }}</li>
-    <li> Voto film : {{ film.vote_average }}</li>
+    {{ film }}
+
     <!-- serve solo per vedere i film a schermo  -->
-  </ul>
+  </section>
 
 
 </template>
