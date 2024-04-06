@@ -67,13 +67,13 @@ export default {
         {{ content.name }}
       </h4>
 
+      <!-- Original_name -->
       <h4>
         {{ content.original_title }}
         {{ content.original_name }}
       </h4>
 
-
-
+      <!-- Flag -->
       <div v-if="flag(content.original_language)">
         <img width="20" :src="'/images/' + content.original_language + '.png'" alt="">
       </div>
@@ -82,9 +82,9 @@ export default {
         {{ content.original_language }}
       </div>
 
-
+         <!-- Voto -->
       <div>
-        {{  }}
+        {{ content.vote_average }}
       </div>
 
 
