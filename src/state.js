@@ -13,7 +13,7 @@ export const state = reactive({
         movies: {
 
         },
-        tv: {
+        TvSeries: {
 
         }
     },
@@ -40,7 +40,7 @@ export const state = reactive({
             .then(([movies, shows]) => {
                 console.log(movies, shows);
                 this.films.movies = movies.data
-                this.films.tv = shows.data
+                this.films.TvSeries = shows.data
                 
 
             })

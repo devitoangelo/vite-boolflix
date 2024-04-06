@@ -27,7 +27,7 @@ export default {
     //   this.state.callApi(url);
 
     // }
-//creare l' Api per le serie tv 
+    //creare l' Api per le serie tv 
 
 
 
@@ -53,11 +53,53 @@ export default {
   </header>
 
 
-  
-  <section v-for="(film,type) in state.films">
-    <h2>{{ type }}</h2>
 
-    {{ film }}
+  <section v-for="(film, type) in state.films">
+    <h1>{{ type }}</h1>
+
+
+
+    <div v-for="content in film.results">
+
+      <!-- Titolo -->
+      <h4>
+        {{ content.title }}
+        {{ content.name }}
+      </h4>
+
+      <h4>
+        {{ content.original_title }}
+        {{ content.original_name }}
+      </h4>
+
+
+
+      <div v-if="flag(content.original_language)">
+        <img width="20" :src="'/images/' + content.original_language + '.png'" alt="">
+      </div>
+
+      <div v-else>
+        {{ content.original_language }}
+      </div>
+
+
+      <div>
+        {{  }}
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
 
     <!-- serve solo per vedere i film a schermo  -->
   </section>
