@@ -103,6 +103,9 @@ export default {
       </span>
 
 
+      <span v-for="n in 5 -  Math.ceil(content.vote_average / 2)">
+          <i class="fa-regular fa-star"></i>
+        </span>
 
 
 
