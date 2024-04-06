@@ -16,18 +16,18 @@ export default {
         return true;
       }
       return false;
-      //continuare con lo screen
     },
+    //bandiere 
 
-    searchSeries(){
-      console.log('ciao', state.search);
-      const url = `${state.urlType + state.FilmSeries}?api_key=${state.api_key}&query=${state.search}`
+    // searchSeries(){
+    //   console.log('ciao', state.search);
+    //   const url = `${state.urlType + state.FilmSeries}?api_key=${state.api_key}&query=${state.search}`
 
-      console.log(url);
-      this.state.callApi(url);
+    //   console.log(url);
+    //   this.state.callApi(url);
 
-    }
-
+    // }
+//creare l' Api per le serie tv 
 
 
 
@@ -39,6 +39,7 @@ export default {
     //   console.log(url);
     //   this.state.callApi(url)
     // }
+    //ho passato la chiamata in state.js
   }
 }
 
@@ -47,13 +48,14 @@ export default {
 <template>
 
   <header>
-    <input type="text" placeholder="cera film o serie TV" v-model="state.search">
-    <button @click="searchSeries()">search</button>
+    <input type="text" placeholder="cera film o serie TV" v-model="state.search" @keyup.enter="state.getResults()">
+    <button @click="state.getResults()">search</button>
   </header>
 
 
+  
   <ul v-for="film in state.films">
-    <li> Titolo originale : {{ film.original_title }}</li>
+    <li > Titolo originale : {{ film.original_title }}</li>
 
     <div v-if="flag(film.original_language)">
       <img width="20" :src="'/images/' + film.original_language + '.png'" alt="">
