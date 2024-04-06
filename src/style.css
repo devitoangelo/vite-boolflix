@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+
+
+#site_header {
+    display: flex;
+    align-items: center;
+
+    >.button {
+        width: 50%;
+        text-align: end;
+
+        >.searchBar{
+            border-radius: 2rem;
+            padding: 5px;
+            text-align: center;
+        }
+        >.search{
+            padding: 5px;
+            border-radius: 2rem;
+            background-color: brown;
+            color: white;
+            border: 1px solid black;
+        }
+    }
+
+    >.logo {
+        width: 50%;
+    }
+
+}
+
+/* Header */

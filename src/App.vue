@@ -18,44 +18,27 @@ export default {
       }
       return false;
     },
-    //bandiere 
 
-    // searchSeries(){
-    //   console.log('ciao', state.search);
-    //   const url = `${state.urlType + state.FilmSeries}?api_key=${state.api_key}&query=${state.search}`
-
-    //   console.log(url);
-    //   this.state.callApi(url);
-
-    // }
-    //creare l' Api per le serie tv 
-
-
-
-
-    // searchText() {
-    //   // console.log('ciao' , this.state.search);
-    //   const url = `${state.urlType}?api_key=${state.api_key}&query=${state.search}`
-
-    //   console.log(url);
-    //   this.state.callApi(url)
-    // }
-    //ho passato la chiamata in state.js
   }
 }
 
 </script>
 
 <template>
-
-  <header>
-    <input type="text" placeholder="cera film o serie TV" v-model="state.search" @keyup.enter="state.getResults()">
-    <button @click="state.getResults()">search</button>
+  <!-- header -->
+  <header id="site_header">
+    <div class="logo">
+      <img width="200px" src="/images/logo.png" alt="">
+    </div>
+    <div class="button">
+      <input class="searchBar" type="text" placeholder="cera film o serie TV" v-model="state.search" @keyup.enter="state.getResults()">
+      <button class="search" @click="state.getResults()">search</button>
+    </div>
   </header>
 
 
 
-  <section v-for="(film, type) in state.films">
+  <section style="color: white;" v-for="(film, type) in state.films">
     <h1>{{ type }}</h1>
 
 
@@ -97,20 +80,15 @@ export default {
 
 
 
-
+      <!-- star -->
       <span v-for="n in Math.ceil(content.vote_average / 2)" :key="n">
         <i class="fa-solid fa-star"></i>
       </span>
 
 
-      <span v-for="n in 5 -  Math.ceil(content.vote_average / 2)">
-          <i class="fa-regular fa-star"></i>
-        </span>
-
-
-
-
-
+      <span v-for="n in 5 - Math.ceil(content.vote_average / 2)">
+        <i class="fa-regular fa-star"></i>
+      </span>
 
 
     </div>
