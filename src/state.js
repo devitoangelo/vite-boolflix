@@ -10,24 +10,41 @@ export const state = reactive({
     api_key: '2df89758a34ce45fc10402fa4da73b3a&',
     search: '',
     films: {
-        movies: {},
-        tv: {}
+        movies: {
+
+        },
+        tv: {
+
+        }
     },
 
 
 
 
-    Movie(){
+    MovieTv() {
         const url = `${this.urlType + this.FilmMovie}?api_key=${this.api_key}&query=${this.search}`
         return axios.get(url)
 
     },
 
-    Series(){
+    Series() {
         const url = `${this.urlType + this.FilmSeries}?api_key=${this.api_key}&query=${this.search}`
         return axios.get(url)
 
     },
+
+    getResults() {
+
+        Promise
+            .all([this.MovieTv(), this.Series()])
+            .then(([movies, shows]) => {
+                console.log(movies, shows);
+                this.films.movies = movies.data
+                this.films.tv = shows.data
+                
+
+            })
+    }
 
 
 
