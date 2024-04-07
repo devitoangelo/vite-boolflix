@@ -44,6 +44,52 @@ body {
     color: white;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+}
+
+
+
+
+
+/* media screnn */
+/* tablet */
+@media screen and (min-width: 600px)  {
+
+
+    .container {
+        width: 50%;
+    }
 
 
 }
+
+
+
+/* mobile */
+@media screen and (min-width: 450px)  {
+
+
+
+.container{
+    width: 100%;
+}
+
+
+
+
+
+}
+
+
+
+/* dextop */
+@media screen and (min-width: 992px) {
+
+    .container {
+     width: 30%;
+    
+    }
+    
+
+}
+

@@ -30,7 +30,8 @@ export default {
   <header id="site_header">
     <!-- logo -->
     <div class="logo">
-      <img width="100px" src="/images/boolflix.png" alt="">
+      <img  style="margin: 1rem; ;" width="50px" src="/images/boolflix.png" alt="">
+     
     </div>
     <!-- searchBar -->
     <div class="button">
@@ -42,7 +43,7 @@ export default {
 
 
 
-  <section class="container" v-for="(film,) in state.films">
+  <section style="width: 90%; margin: auto;" class="container" v-for="(film,) in state.films">
     <!-- <h1>{{ type }}</h1> -->
 
 
