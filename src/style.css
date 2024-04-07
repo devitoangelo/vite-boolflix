@@ -35,7 +35,15 @@ body {
     >.logo {
         width: 50%;
     }
-
 }
 
-/* Header */
+/* header */
+
+
+.container{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}

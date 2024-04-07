@@ -12,13 +12,14 @@ export default {
     }
   },
   methods: {
+
     flag(lang) {
       if (this.language.includes(lang)) {
         return true;
       }
       return false;
     },
-
+    // bandiere
   }
 }
 
@@ -27,25 +28,35 @@ export default {
 <template>
   <!-- header -->
   <header id="site_header">
+    <!-- logo -->
     <div class="logo">
-      <img width="200px" src="/images/logo.png" alt="">
+      <img width="100px" src="/images/boolflix.png" alt="">
     </div>
+    <!-- searchBar -->
     <div class="button">
-      <input class="searchBar" type="text" placeholder="cera film o serie TV" v-model="state.search" @keyup.enter="state.getResults()">
+      <input class="searchBar" type="text" placeholder="cera film o serie TV" v-model="state.search"
+        @keyup.enter="state.getResults()">
       <button class="search" @click="state.getResults()">search</button>
     </div>
   </header>
 
 
 
-  <section style="color: white;" v-for="(film, type) in state.films">
-    <h1>{{ type }}</h1>
+  <section class="container" v-for="(film,) in state.films">
+    <!-- <h1>{{ type }}</h1> -->
 
 
 
     <div v-for="content in film.results">
 
       <!-- Titolo -->
+
+      <!-- Img -->
+      <div>
+        <img :src="'https://image.tmdb.org/t/p/w300/' + content.poster_path" alt="">
+
+      </div>
+
       <h4>
         {{ content.title }}
         {{ content.name }}
@@ -73,10 +84,7 @@ export default {
 
 
       <!-- Img -->
-      <div>
-        <img :src="'https://image.tmdb.org/t/p/w500/' + content.poster_path" alt="">
 
-      </div>
 
 
 

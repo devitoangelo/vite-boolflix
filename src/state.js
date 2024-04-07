@@ -26,12 +26,15 @@ export const state = reactive({
         return axios.get(url)
 
     },
+// chiamata per i films
 
     Series() {
         const url = `${this.urlType + this.FilmSeries}?api_key=${this.api_key}&query=${this.search}`
         return axios.get(url)
 
     },
+
+// chiamata per le serie tv
 
     getResults() {
 
@@ -41,9 +44,8 @@ export const state = reactive({
                 console.log(movies, shows);
                 this.films.movies = movies.data
                 this.films.TvSeries = shows.data
-                
-
             })
+ // pusho nell'array le mie chiamate 
     }
 
 
