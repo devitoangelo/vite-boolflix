@@ -40,14 +40,13 @@ body {
 /* header */
 
 
-.container{
+.Main_container{
     color: white;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    
+
 }
-
-
 
 
 
@@ -56,7 +55,7 @@ body {
 @media screen and (min-width: 600px)  {
 
 
-    .container {
+    .Main_container {
         width: 50%;
     }
 
@@ -70,7 +69,7 @@ body {
 
 
 
-.container{
+.Main_container{
     width: 100%;
 }
 
@@ -85,7 +84,7 @@ body {
 /* dextop */
 @media screen and (min-width: 992px) {
 
-    .container {
+    .Main_container {
      width: 30%;
     
     }

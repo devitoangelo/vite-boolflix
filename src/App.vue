@@ -30,8 +30,8 @@ export default {
   <header id="site_header">
     <!-- logo -->
     <div class="logo">
-      <img  style="margin: 1rem; ;" width="50px" src="/images/boolflix.png" alt="">
-     
+      <img style="margin: 1rem; ;" width="50px" src="/images/boolflix.png" alt="">
+
     </div>
     <!-- searchBar -->
     <div class="button">
@@ -43,21 +43,21 @@ export default {
 
 
 
-  <section style="width: 90%; margin: auto;" class="container" v-for="(film,) in state.films">
+  <section style="width: 90%; margin: auto;" class="Main_container" v-for="(film,) in state.films">
     <!-- <h1>{{ type }}</h1> -->
 
 
 
-    <div v-for="content in film.results">
-
-      <!-- Titolo -->
+    <div style="margin: 3rem;" v-for="content in film.results">
 
       <!-- Img -->
       <div>
-        <img :src="'https://image.tmdb.org/t/p/w300/' + content.poster_path" alt="">
-
+        <img  :src="'https://image.tmdb.org/t/p/w300/' + content.poster_path" alt="">
+       
       </div>
 
+
+      <!---- titolo -->
       <h4>
         {{ content.title }}
         {{ content.name }}
@@ -84,11 +84,7 @@ export default {
       </div>
 
 
-      <!-- Img -->
-
-
-
-
+     
       <!-- star -->
       <span v-for="n in Math.ceil(content.vote_average / 2)" :key="n">
         <i class="fa-solid fa-star"></i>
